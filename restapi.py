@@ -7,8 +7,8 @@ load_dotenv()
 auth_key = os.getenv("API_KEY")
 deepl_client = deepl.DeepLClient(auth_key)
 
-input_path = "C:/Users/Jasiek/Desktop/janpawlowski_CV.pdf"
-output_path = "C:/Users/Jasiek/Desktop/janpawlowski_CV_EN_DEEPL_lowformality.pdf"
+input_path = os.getenv("INPUT_PATH")
+output_path = os.getenv("OUTPUT_PATH")
 try:
     deepl_client.translate_document_from_filepath(input_path, output_path, target_lang="EN-GB")
 
